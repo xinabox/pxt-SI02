@@ -1,0 +1,17 @@
+{
+    "name": "SI02",
+    "version": "0.0.1",
+    "description": "XinaBox SI02 - Accelerometer and Magnetometer",
+    "license": "MIT",
+    "dependencies": {
+        "core": "*"
+    },
+    "files": [
+        "README.md",
+        "SI02.ts"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "public": true
+}
