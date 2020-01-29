@@ -4,8 +4,7 @@
     "description": "XinaBox SI02 IMU: Accelerometer and Magnetometer",
     "license": "MIT",
     "dependencies": {
-        "core": "*",
-        "xinabox-cs11": "*"
+        "core": "*"
     },
     "files": [
         "README.md",
