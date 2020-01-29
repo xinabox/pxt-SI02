@@ -1,10 +1,11 @@
 {
     "name": "SI02",
     "version": "0.0.1",
-    "description": "XinaBox SI02 - Accelerometer and Magnetometer",
+    "description": "XinaBox SI02 IMU: Accelerometer and Magnetometer",
     "license": "MIT",
     "dependencies": {
-        "core": "*"
+        "core": "*",
+        "xinabox-cs11": "*"
     },
     "files": [
         "README.md",
@@ -13,5 +14,6 @@
     "testFiles": [
         "test.ts"
     ],
-    "public": true
+    "public": true,
+    "preferredEditor": "blocksprj"
 }
