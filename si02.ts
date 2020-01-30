@@ -160,7 +160,7 @@ namespace SI02 {
         let val = 0;
         if (dataReady()) {
             let res = readBlock(MAG3110_I2C_ADDRESS, MAG3110_OUT_X_MSB, 6)
-            pause(2 / 1000);
+            basic.pause(2 / 1000);
             x = res[0] << 8 | res[1];
             y = res[2] << 8 | res[3];
             z = res[4] << 8 | res[5]
@@ -198,13 +198,13 @@ namespace SI02 {
 
         //If we attempt to write to CTRL_REG1 right after going into standby
         //It might fail to modify the other bits
-        pause(100);
+        baisc.pause(100);
 
         //Get the current control register
         let current = getreg(MAG3110_I2C_ADDRESS, MAG3110_CTRL_REG1) & 0x07; //And chop off the 5 MSB
         setreg(MAG3110_I2C_ADDRESS, MAG3110_CTRL_REG1, (current | DROS)); //Write back the register with new DR_OS set
 
-        pause(100);
+        basic.pause(100);
 
         //Start sampling again if we were before
         if (wasActive) exitStandby();
@@ -243,7 +243,7 @@ namespace SI02 {
 
         setreg(MAG3110_I2C_ADDRESS, msbAddress, ((offset >> 8) & 0xFF));
 
-        pause(15);
+        basic.pause(15);
 
         setreg(MAG3110_I2C_ADDRESS, lsbAddress, offset & 0xFF);
     }
@@ -338,7 +338,7 @@ namespace SI02 {
 
         msb = getreg(MAG3110_I2C_ADDRESS, msbAddress);
 
-        pause(2); //needs at least 1.3us free time between start and stop
+        basic.pause(2); //needs at least 1.3us free time between start and stop
 
         lsb = getreg(MAG3110_I2C_ADDRESS, lsbAddress);
 
@@ -506,7 +506,7 @@ namespace SI02 {
         // return value for MMA8543Q is 0x3A
 
         setreg(MMA_I2C_ADDR, MMA_8653_CTRL_REG2, MMA_8653_CTRL_REG2_RESET)
-        pause(10); // Give it time to do the reset
+        basic.pause(10); // Give it time to do the reset
         standby();
 
         if (_MMA_8653_PORTRAIT_LANDSCAPE) {
