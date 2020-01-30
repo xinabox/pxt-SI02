@@ -1,6 +1,6 @@
 {
     "name": "SI02",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "XinaBox SI02 IMU: Accelerometer and Magnetometer",
     "license": "MIT",
     "dependencies": {
