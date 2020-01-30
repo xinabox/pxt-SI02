@@ -13,6 +13,8 @@ namespace SI02 {
         Z = 2
     }
 
+    const NaN = 0 / 0
+    
     function setreg(addr: number, reg: number, dat: number): void {
         let buf = pins.createBuffer(2);
         buf[0] = reg;
