@@ -198,7 +198,7 @@ namespace SI02 {
 
         //If we attempt to write to CTRL_REG1 right after going into standby
         //It might fail to modify the other bits
-        baisc.pause(100);
+        basic.pause(100);
 
         //Get the current control register
         let current = getreg(MAG3110_I2C_ADDRESS, MAG3110_CTRL_REG1) & 0x07; //And chop off the 5 MSB
